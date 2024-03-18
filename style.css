@@ -1,0 +1,363 @@
+body {
+  margin: 0px;
+  background: url("images/body-bg.jpg") repeat-x;
+}
+
+/*header style*/
+#wrapper {
+  max-width: 1000px;
+  margin-inline: auto;
+
+  min-height: 92vh;
+}
+
+#header {
+  position: relative;
+}
+
+#logo {
+  margin-top: 34px;
+  margin-bottom: 40px;
+}
+
+#nav ul {
+  margin-left: -55px;
+}
+
+#nav li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+a {
+  font: 12px Arial;
+  text-decoration: none;
+  color: black;
+}
+
+#nav #home:link {
+  color: white;
+  background: url("images/nav-left.jpg") no-repeat left,
+    url("images/nav-right.jpg") no-repeat right,
+    url("images/nav-mid.jpg") repeat-x;
+  padding: 9px 20px;
+}
+
+#nav #home:visited {
+  color: white;
+}
+
+#nav a:hover {
+  color: white;
+  background: url("images/nav-left.jpg") no-repeat left,
+    url("images/nav-right.jpg") no-repeat right,
+    url("images/nav-mid.jpg") repeat-x;
+  padding: 8px 20px;
+}
+
+#nav-check {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-toggler {
+  height: 32px;
+  width: 50px;
+  background: linear-gradient(#b67926, #d09726, #e2a928);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: -5px;
+}
+
+.nav-toggler span {
+  display: block;
+  height: 2px;
+  width: 23px;
+  background-color: rgb(230, 225, 217);
+  position: relative;
+}
+
+.nav-toggler span::before,
+.nav-toggler span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(230, 225, 217);
+  left: 0;
+}
+
+.nav-toggler span::before {
+  top: -6px;
+}
+
+.nav-toggler span::after {
+  top: 6px;
+}
+
+@media only screen and (max-width: 767px) {
+  .nav-toggler {
+    display: flex;
+  }
+
+  #nav {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background: linear-gradient(#726d50, #5c5543, #392f2e);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  #nav ul li {
+    display: block;
+    margin: 18px 0;
+    padding: 0 30px;
+  }
+
+  #nav a {
+    color: rgb(230, 225, 217);
+  }
+
+  #nav #home:link,
+  #nav a:hover {
+    background: linear-gradient(#b67926, #d09726, #e2a928);
+    border-radius: 10px;
+
+    padding: 8px;
+  }
+
+  #nav-check:checked ~ #nav {
+    opacity: 1;
+    visibility: visible;
+  }
+  #nav-check:focus ~ .nav-toggler span {
+    box-shadow: 0 0 15px #000000;
+  }
+
+  #nav-check:checked ~ .nav-toggler span {
+    background-color: transparent;
+  }
+
+  #nav-check:checked ~ .nav-toggler span::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  #nav-check:checked ~ .nav-toggler span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+}
+
+/*banner style*/
+#banner {
+  background: white;
+  margin-top: 45px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+}
+
+#banner #slideshow {
+  width: calc(100% - 362px);
+  min-width: 338px;
+  height: 340px;
+}
+
+#banner img {
+  width: 100%;
+  height: 100%;
+}
+
+#quick-quote {
+  background: linear-gradient(#b67926, #d09726, #e2a928);
+  min-width: min(calc(100% - 362px), 300px);
+  padding: 0 19px;
+}
+
+#quick-quote h2 {
+  color: white;
+  font: 20px "Trebuchet MS";
+}
+
+#quick-quote span {
+  color: white;
+  font: 12px "Trebuchet MS";
+  line-height: 30px;
+}
+
+#quick-quote #in {
+  border: 5px solid white;
+  border-radius: 5px;
+  font: 12px "Trebuchet MS";
+  width: 100%;
+}
+
+#quick-quote #btn {
+  background-image: linear-gradient(#757474, black);
+  margin-top: 13px;
+  width: 100px;
+  padding: 8px;
+  font: 12px "Trebuchet MS";
+  color: white;
+}
+
+@media only screen and (max-width: 770px) {
+  #banner #slideshow {
+    min-width: 100%;
+  }
+
+  #quick-quote {
+    width: 100%;
+  }
+}
+
+/* main style */
+#main {
+  --breakpoint: 767px;
+  margin-top: 80px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: center;
+
+  font-family: "Trebuchet MS";
+  font-size: 14px;
+}
+
+.main__card {
+  background: linear-gradient(
+    135deg,
+    rgba(245, 243, 243, 0.459) 0%,
+    rgba(245, 243, 243, 0.8) 100%
+  );
+  padding: 10px 20px;
+
+  flex-grow: 1;
+  flex-basis: calc((var(--breakpoint) - 100%) * 999);
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.main__card .title {
+  font-size: 24px;
+  margin: 6px 0px 18px 0px;
+}
+
+.main__card .title span {
+  color: orange;
+}
+
+.main__card .content {
+  display: flex;
+  gap: 6px;
+}
+
+.main__card .content .read-more {
+  margin-top: 10px;
+}
+
+.main__card .content__image {
+  width: 82px;
+  height: 82px;
+
+  padding: 3px;
+  margin-bottom: 10px;
+
+  border: 2px solid lightgrey;
+}
+
+.main__card .content__image div {
+  width: 82px;
+  height: 82px;
+  background-color: lightgrey;
+}
+
+.main__card a {
+  text-decoration: underline;
+  color: black;
+
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* footer style */
+#footer {
+  box-sizing: border-box;
+  margin-top: 50px;
+  background: linear-gradient(#726d50, #5c5543, #392f2e);
+
+  padding: 20px;
+  font-family: "Arial";
+}
+
+.footer__wrapper {
+  max-width: 1000px;
+  margin-inline: auto;
+
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer div,
+#footer a,
+#footer label {
+  color: rgb(230, 225, 217);
+
+  font-size: 12px;
+}
+
+#footer div {
+  line-height: 20px;
+}
+
+#footer .input-control {
+  margin-top: 3px;
+}
+
+#footer input {
+  height: 32px;
+
+  border: none;
+  border-radius: 2px;
+}
+
+#footer button {
+  background-image: linear-gradient(#757474, black);
+  width: 100px;
+  padding: 8px;
+  font: 12px "Trebuchet MS";
+  color: white;
+}
+
+@media only screen and (max-width: 745px) {
+  #footer div {
+    text-align: center;
+  }
+  .footer__wrapper {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #wrapper {
+    margin: 0 30px;
+  }
+}
