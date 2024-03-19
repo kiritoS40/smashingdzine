@@ -226,7 +226,7 @@ a {
 }
 
 /* main style */
-#main {
+/* #main {
   --breakpoint: 767px;
   margin-top: 80px;
 
@@ -234,6 +234,31 @@ a {
   flex-wrap: wrap;
   gap: 35px;
   justify-content: center;
+
+  font-family: "Trebuchet MS";
+  font-size: 14px;
+} */
+
+/* .main__card {
+  background: linear-gradient(
+    135deg,
+    rgba(245, 243, 243, 0.459) 0%,
+    rgba(245, 243, 243, 0.8) 100%
+  );
+  padding: 10px 20px;
+
+  flex-grow: 1;
+  flex-basis: calc((var(--breakpoint) - 100%) * 999);
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+} */
+
+#main {
+  margin-top: 80px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
 
   font-family: "Trebuchet MS";
   font-size: 14px;
@@ -246,9 +271,6 @@ a {
     rgba(245, 243, 243, 0.8) 100%
   );
   padding: 10px 20px;
-
-  flex-grow: 1;
-  flex-basis: calc((var(--breakpoint) - 100%) * 999);
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
